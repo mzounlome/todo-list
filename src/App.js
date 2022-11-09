@@ -1,23 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.scss";
+
+import Header from "./components/Menu/Header/Header";
+import Input from "./components/Input/Input";
+import MainNav from "./components/Menu/Nav/Nav";
+import TaskManager from "./components/Task Menu/TaskManager";
+import { tasks } from "./data";
+import { useState } from "react";
 
 function App() {
+  const [taskList, setTaskList] = useState(tasks.All);
+
+  const handleTaskList = (value) => {
+    switch (value) {
+      case "Active":
+        setTaskList(tasks.All.filter((task) => !task.completed));
+        break;
+      case "Completed":
+        setTaskList(tasks.All.filter((task) => task.completed));
+        break;
+      default:
+        setTaskList(tasks.All);
+    }
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>
+        <Header />
+      </div>
+      <div>
+        <MainNav handleTaskList={handleTaskList} />
+      </div>
+      <div>
+        <Input />
+      </div>
+      <TaskManager tasks={taskList} />
     </div>
   );
 }
