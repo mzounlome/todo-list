@@ -2,20 +2,20 @@ import "./Nav.scss";
 
 import Nav from "react-bootstrap/Nav";
 
-function MainNav({ handleTaskList }) {
+function MainNav({ setTaskType }) {
   return (
     <Nav className="tasknav" justify variant="tabs" defaultActiveKey="/link-1">
-      <Nav.Item onClick={() => handleTaskList("All")}>
+      <Nav.Item onClick={() => setTaskType("All")}>
         <Nav.Link className="choice" eventKey="/link-1">
           All
         </Nav.Link>
       </Nav.Item>
-      <Nav.Item onClick={() => handleTaskList("Active")}>
+      <Nav.Item onClick={() => setTaskType("Active")}>
         <Nav.Link className="choice" eventKey="link-2">
           Active
         </Nav.Link>
       </Nav.Item>
-      <Nav.Item onClick={() => handleTaskList("Completed")}>
+      <Nav.Item onClick={() => setTaskType("Completed")}>
         <Nav.Link className="choice" eventKey="link-3">
           Completed
         </Nav.Link>

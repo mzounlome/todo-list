@@ -2,11 +2,18 @@ import { SearchBar, SearchBarDiv, SearchButton } from "./Input-styles";
 
 import React from "react";
 
-const Input = () => {
+const Input = ({ setCurrentTask, currentTask, createTask }) => {
   return (
     <SearchBarDiv>
-      <SearchBar placeholder="add details" type="search"></SearchBar>
-      <SearchButton>Add</SearchButton>
+      <SearchBar
+        onChange={(e) => setCurrentTask(e.target.value)}
+        placeholder="add details"
+        type="search"
+        value={currentTask}
+      ></SearchBar>
+      <SearchButton onClick={createTask} disabled={!currentTask}>
+        Add
+      </SearchButton>
     </SearchBarDiv>
   );
 };

@@ -41,44 +41,4 @@ export const tasks = {
       completed: true,
     },
   ],
-  Active: [
-    { id: 1, description: "Edit latest video ", completed: false },
-    {
-      id: 2,
-      description: "Go to bank ",
-      completed: false,
-    },
-    {
-      id: 3,
-      description: "Eat lunch ",
-      completed: false,
-    },
-  ],
-  Completed: [
-    {
-      id: 8,
-      description: "Have fun",
-      completed: true,
-    },
-    {
-      id: 5,
-      description: "Feed the dog",
-      completed: true,
-    },
-    {
-      id: 6,
-      description: "Prepare for scrims ",
-      completed: true,
-    },
-    {
-      id: 1,
-      description: "Walk the dog ",
-      completed: true,
-    },
-    {
-      id: 2,
-      description: "Take out trash",
-      completed: true,
-    },
-  ],
 };
